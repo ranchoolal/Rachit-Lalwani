@@ -3,7 +3,7 @@
 	// site owner
 	$site_name = 'cvCard HTML5 Template';
 	$sender_domain = 'server@your-domain.com';
-	$to = 'your-mail@address.com';
+	$to = 'rachitlalwani97@gmail.com';
 	
 	
 	// contact form fields
