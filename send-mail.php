@@ -2,7 +2,7 @@
 
 	// site owner
 	$site_name = 'cvCard HTML5 Template';
-	$sender_domain = 'server@your-domain.com';
+	$sender_domain = 'design@rachitlalwani.com';
 	$to = 'rachitlalwani97@gmail.com';
 	
 	
