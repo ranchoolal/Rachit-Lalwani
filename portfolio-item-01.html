@@ -244,6 +244,10 @@
         <script src="js/classie.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
         <script src="js/main.js"></script>
+		<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script> (function () { emailjs.init("bW1BBxGYPw-0AFEqf");
+		// Replace with your EmailJS user_id
+		})(); document.getElementById('contactForm').addEventListener('submit', function (e) { e.preventDefault(); emailjs.sendForm('service_y7c8sjv', 'template_g9bqj4s', this).then( function () { alert('Email sent successfully!'); }, function (error) { alert('Failed to send email: ' + error.text); } ); }); </script>
 
         
 	</body>

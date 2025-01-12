@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js one-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig"><!-- InstanceBegin template="/Templates/layout.dwt" codeOutsideHTMLIsLocked="false" -->
+<html lang="en" class="no-js single-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig"><!-- InstanceBegin template="/Templates/layout.dwt" codeOutsideHTMLIsLocked="false" -->
 
 	<head>
     
@@ -609,31 +609,31 @@
                                         
                                     
                                   <!-- .contact-form -->
-                                  <div class="contact-form">
+                                  <div class="contactForm">
                                     
-                                      <form id="contact-form" action="send-mail.php" method="post">
+                                      <form id="contactForm" action="send-mail.php" method="post">
                                         
                                         <!-- enter mail subject here -->
-                                        <input type="hidden" name="subject" id="subject" value="You have a new message from your Portfolio!">
+                                        <!-- <input type="hidden" name="subject" id="subject" value="You have a new message from your Portfolio!"> -->
                                         
                                         <p>
-                                          <label for="name">NAME</label>
-                                          <input type="text" name="name" id="name" class="required">
+                                          <label for="user_name">NAME</label>
+                                          <input type="text" name="user_name" placeholder="Your Name" required>
                                         </p>
                                         
                                         <p>
-                                          <label for="email">EMAIL</label>
-                                          <input type="text" name="email" id="email" class="required email">
+                                          <label for="user_email">EMAIL</label>
+                                          <input input type="email" name="user_email" placeholder="Your Email" required>
                                         </p>
                                         
                                         
                                         <p>
                                           <label for="message">MESSAGE</label>
-                                          <textarea name="message" id="message" class="required"></textarea>
+                                          <textarea name="message" placeholder="Your Message" required></textarea>
                                         </p>
                                        
                                         <p>
-                                          <input type="submit" class="submit button primary" value="SEND">
+                                          <button type="submit">Submit</button>
                                         </p>
                                         
                                       </form>
@@ -1137,6 +1137,10 @@
         <script src="js/classie.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
         <script src="js/main.js"></script>
+		<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script> (function () { emailjs.init("bW1BBxGYPw-0AFEqf");
+		// Replace with your EmailJS user_id
+		})(); document.getElementById('contactForm').addEventListener('submit', function (e) { e.preventDefault(); emailjs.sendForm('service_y7c8sjv', 'template_g9bqj4s', this).then( function () { alert('Email sent successfully!'); }, function (error) { alert('Failed to send email: ' + error.text); } ); }); </script>
 
         
 	</body>
