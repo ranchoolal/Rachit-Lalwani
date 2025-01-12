@@ -1,54 +1,37 @@
 <?php
-
-	// site owner
-	$site_name = 'cvCard HTML5 Template';
-	$sender_domain = 'design@rachitlalwani.com';
-	$to = 'rachitlalwani97@gmail.com';
-	
-	
-	// contact form fields
-	$name = trim( $_POST['name'] );
-	$email = trim( $_POST['email'] );
-	$subject = trim( $_POST['subject'] );
-	$message = trim( $_POST['message'] );
-	
-	
-	// check for error
-	$error = false;
-	
-	if ( $name === "" ) { $error = true; }
-	
-	if ( $email === "" ) { $error = true; }
-	
-	if ( $subject === "" ) { $error = true; }
-	
-	if ( $message === "" ) { $error = true; }
-	
-	
-	// if no error, then send mail
-	if ( $error == false )
-	{
-		$body = "Name: $name \n\nEmail: $email \n\nMessage: $message";
-		
-		$headers = "From: " . $site_name . ' <' . $sender_domain . '> ' . "\r\n";
-		$headers .= "Reply-To: " . $name . ' <' . $email . '> ' . "\r\n";
-		
-		$mail_result = mail( $to, $subject, $body, $headers );
-		
-		if ( $mail_result == true )
-		{
-			echo 'success';
-		}
-		else
-		{
-			echo 'unsuccess';
-		}
-		// end if
-	}
-	else
-	{
-		echo 'error';
-	}
-	// end if
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+require_once "vendor/autoload.php";
+// Enable or disable exceptions via variable
+$debug = true;
+try {
+    // Create instance of PHPMailer class
+    $mail = new PHPMailer($debug);
+     if ($debug) {
+         // issue a detailed log
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER; 
+    }
+    // Authentication with SMTP
+    $mail-> isSMTP();
+    $mail->SMTPAuth = true;
+    // Login
+    $mail->Host = "smtp.ionos.com";
+    $mail->Port = 465;
+    $mail->Username = "design@rachitlalwani.com";
+    $mail->Password = "Ionos@2651167";
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->setFrom('design@rachitlalwani.com', 'name');
+    $mail->addAddress('design@rachitlalwani.com', 'name');
+  //  $mail-> addAttachment("/home/user/Desktop/sampleimage.png", "sampleimage.png");
+    $mail->CharSet = 'UTF-8';
+    $mail->Encoding = 'base64';
+    $mail->isHTML(true);
+    $mail->Subject = 'The subject of your mail';
+    $mail->Body = 'The mail text in HTML content. <b>bold</b> elements are allowed.';
+    $mail->AltBody = 'The text as a simple text element';
+    $mail->send();
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: ".$e->getMessage();
+}
 ?>
