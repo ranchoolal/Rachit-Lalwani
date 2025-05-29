@@ -62,7 +62,7 @@
             <header class="header">
             
                 <img src="images/site/avatar.png" alt="avatar">
-				<h1>Johnny Doe</h1>
+				<h1>Rachit Lalwani</h1>
                 <p>freelance graphic designer</p>
 				
                 <!-- NAV MENU -->
@@ -100,7 +100,7 @@
                     	
                         <!-- TITLE - column 8/12 -->
                         <div class="col-md-8 portfolio-field portfolio-title">
-                            <h2>Showcase your project</h2>
+                            <h2>HRMS Project Case Study</h2>
                         </div>
                         <!-- TITLE - column 8/12 -->
                         
@@ -122,30 +122,56 @@
                     <div class="row">
                     	
                         <!-- PORTFOLIO-IMAGES - column 8/12 -->
-                        <div class="col-md-8 portfolio-field">
+                        <div class="col-md-6 portfolio-field">
                             <img src="images/portfolio/single/single-05.png" alt="project">
                             <img src="images/portfolio/single/single-07.png" alt="project">
+							<img src="images/portfolio/single/single-07.png" alt="project">
+							<img src="images/portfolio/single/single-07.png" alt="project">
                         </div>
                         <!-- PORTFOLIO-IMAGES - column 8/12 -->
                         
                         
                         <!-- PORTFOLIO SIDEBAR - column 4/12 -->
-                        <div class="col-md-4 portfolio-field">
+                        <div class="col-md-6 portfolio-field">
                             
-                            <h3>Description</h3>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
-                            <p>Established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters. </p>
+                            <h3>Overview</h3>
+                            <p>The HRMS (Human Resource Management System) was developed using Google Sheets to streamline the recruitment and management processes for an organization that primarily employs interns. This system automates various tasks, tracks key metrics, and improves communication, thereby enhancing the overall efficiency of the recruitment process.</p>
+                            <p><B>The system consists of six interconnected sheets, each performing distinct functions, but working together to ensure seamless data flow and tracking across recruitment, intern management, and communication.</B></p>
+							
+							<h3>Problem Statement</h3>
+							<p>The organization faced challenges in managing intern applications, tracking recruitment processes, and monitoring intern statuses. Manual processes were time-consuming and prone to errors, leading to delays in communication and inefficiencies in managing internship timelines. Additionally, the organization required a structured way to handle the onboarding and exit processes for interns, ensuring a smooth transition and clear communication.</p>
                             
-                            <h3>Client</h3>
-                            <p>Apple Inc.</p>
-                            
-                            <h3>Technology</h3>
+							<h2>Solution Design</h2>
+							<h3>System Architecture and Workflow</h3>
+							<p>Each sheet plays a critical role in the system, and they are interconnected to ensure smooth transitions from one phase to the next. For example, data flows from the application database to selection tracking, which further feeds into intern lists and status monitoring, keeping all sheets updated in real time.</p>
+							
+							<ol>
+							<li><B>Data Collection (Sheet 1 - Applications Database):</B>
+								<p>Intern applications submitted via Google Forms are automatically recorded in this sheet, creating a centralized database for easy access and management.</p>
+							<li><B>Recruitment Tracking (Sheet 2 - Selection Tracker):</B>
+								<p>This sheet pulls data from the Applications Database to mark both selected and non-selected applications. It also logs reasons for non-selection, providing transparency and valuable insights into the recruitment process.</p>
+							<li><B>Applicant Preferences and Communication Monitoring (Sheet 3 - Selected Applicants)</B>
+								<p>Once applicants are selected, their information flows from the Selection Tracker into this sheet. It lists their preferred work domains (such as operations, HR, or business management), desired duration, and start date. This sheet also monitors whether selection or rejection emails were sent, ensuring timely communication.</p>
+							<li><B>Comprehensive Intern List (Sheet 4 - Interns Database):</B>
+								<p>The information from the selected applicants feeds into this sheet, which maintains a complete list of current interns, past interns, and alumni. This comprehensive view ensures that the organization can effectively track all interns, regardless of their status.</p>
+							<li><B>Intern Status Overview and Exit Tracker (Sheet 5):</B>
+								<p>Interns listed in the previous sheet are further monitored here. Their start dates and durations are used to calculate exit dates automatically. The system accommodates exam breaks, leaves, and extensions. Conditional formatting is applied to provide alerts for upcoming exits, ensuring smooth transitions.</p>
+							</ol>
+							<h2>Tools Used</h2>
+							<ul>
+								<li><b>Google Sheets:</b>The primary tool for developing the HRMS, enabling data collection, organization, and automation through functions and formulas.
+								<li><b>Google Forms:</b>Used to collect intern applications efficiently, automatically populating data into the Applications Database.
+								<li><b>Conditional Formatting:</b>Implemented across sheets to provide visual cues for important statuses, such as upcoming exits.
+							</ul>
+                            <h2>About the Organization</h2>
+                            <p>Mahika Mishra Foundation - The organization operates without any permanent employees, relying entirely on interns to fulfill its roles. This structure fosters a dynamic and fresh perspective within the workforce.</p>
+                            <!--<h3>Technology</h3>
                             <ul class="tags">
                                 <li><a>HTML 5</a></li>
                                 <li><a>CSS 3</a></li>
                                 <li><a>jQuery</a></li>
                                 <li><a>Responsive Design</a></li>
-                            </ul>
+                            </ul>-->
                             
                             <div class="launch">
                                 <a href="#" class="button primary">LAUNCH PROJECT</a>
